@@ -51,7 +51,7 @@ export const modelProfile = {
   // Measurements
   measurements: {
     height: "158 cm",
-    bust: "34 b",
+    bust: "34 B",
     waist: "32 in",
     hips: "36 in",
     shoeSize: "UK 5",
