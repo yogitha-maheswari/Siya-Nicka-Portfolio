@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Siya Nicka – Fashion Model Portfolio
 
-First, run the development server:
+A modern, cinematic fashion model portfolio built to showcase editorial, runway, and commercial work through a luxury-inspired visual experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Designed with a minimal dark aesthetic, soft rose-pink accents, and smooth motion, the site presents a professional digital presence suitable for clients, agencies, and collaborations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Live Website
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**[https://siyanicka.vercel.app](https://siyanicka.vercel.app)**
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This portfolio was created to provide a refined, agency-style presentation of a fashion model’s work.
+The design focuses on:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Clean editorial layouts
+* Cinematic visual hierarchy
+* Smooth, subtle animations
+* Responsive viewing across all devices
+* Professional booking-ready structure
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Cinematic hero section with smooth scroll transitions
+* Category-based portfolio gallery
+* Animated sections using motion effects
+* Responsive mobile-first design
+* Contact form with email integration
+* Luxury dark theme with rose-pink accents
+* Social media integration
+* Minimal, distraction-free layouts
+
+---
+
+## Tech Stack
+
+* **Framework:** Next.js
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **Icons:** Lucide React
+* **Email Service:** EmailJS
+* **Language:** TypeScript
+
+---
+
+## Design Approach
+
+The portfolio follows a **minimal luxury aesthetic** inspired by high-fashion editorials:
+
+* Deep cinematic backgrounds
+* Soft blush-pink accent tones
+* Elegant serif typography
+* Spacious, editorial-style layouts
+* Smooth motion and refined interactions
+
+The goal was to create a site that feels more like a **fashion lookbook** than a traditional website.
+
+---
+
+## Sections Included
+
+* Hero introduction
+* About the model
+* Measurements and stats
+* Portfolio gallery
+* Experience highlights
+* Contact and booking form
+* Social links
+
+---
+
+## Author
+
+**Yogitha**
+Frontend Developer & Designer
+
+---
+
+## License
+
+This project is intended for portfolio and personal use.
+Design and structure may be adapted for similar creative projects.
+
+
+
+
