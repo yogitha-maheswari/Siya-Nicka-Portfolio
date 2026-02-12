@@ -1,0 +1,396 @@
+/* ===========================
+   Fonts (MUST be first)
+=========================== */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ===========================
+   Tailwind v4 Import
+=========================== */
+@import "tailwindcss";
+
+/* ===========================
+   CSS Variables & Theme
+=========================== */
+:root {
+  /* Core */
+  --background: 0 0% 2%;
+  --foreground: 40 20% 95%;
+
+  --section: 0 0% 5%;
+
+  --card: 0 0% 5%;
+  --card-foreground: 40 20% 95%;
+
+  --popover: 0 0% 4%;
+  --popover-foreground: 40 20% 95%;
+
+  --primary: 15 30% 70%;
+  --primary-foreground: 0 0% 2%;
+
+  --secondary: 0 0% 28%;
+  --secondary-foreground: 40 20% 90%;
+
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 50%;
+
+  --accent: 350 25% 65%;
+  --accent-foreground: 0 0% 98%;
+
+  --nav-foreground: 0 0% 35%;
+
+  --destructive: 0 62.8% 30.6%;
+  --border: 0 0% 15%;
+  --input: 0 0% 12%;
+  --ring: 15 30% 70%;
+  --radius: 0.5rem;
+
+  /* Luxury palette */
+  --cream: 40 30% 92%;
+  --champagne: 38 35% 75%;
+  --rose: 350 25% 65%;
+  --blush: 10 30% 80%;
+  --obsidian: 0 0% 3%;
+  --onyx: 0 0% 8%;
+  --graphite: 0 0% 18%;
+
+  /* Glass */
+  --glass-bg: 0 0% 8% / 0.6;
+  --glass-border: 0 0% 100% / 0.08;
+}
+
+/* ===========================
+   Base Styles
+=========================== */
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+/* ===========================
+   Components
+=========================== */
+.bg-section {
+  background-color: hsl(var(--section));
+}
+
+/* Force primary text color */
+.text-primary-force {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Force primary background color */
+.bg-primary-force {
+  background: hsl(var(--primary)) !important;
+}
+
+/* Navigation text */
+.nav-text {
+  color: hsl(var(--muted-foreground));
+}
+
+
+/* Glass card */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--glass-bg)),
+    hsl(0 0% 5% / 0.8)
+  );
+  border: 1px solid hsl(var(--glass-border));
+  backdrop-filter: blur(20px);
+}
+
+/* Editorial text */
+.text-editorial {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.05em;
+}
+
+/* Section divider */
+.section-divider {
+  width: 4rem;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    hsl(var(--primary) / 0.5),
+    transparent
+  );
+  margin-inline: auto;
+}
+
+/* Luxury button */
+.btn-luxury {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: 1px solid hsl(var(--primary) / 0.4);
+  color: hsl(var(--primary));
+  background: transparent;
+  transition: all 0.5s ease;
+  z-index: 0; /* ADD THIS */
+}
+
+.btn-luxury::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.1),
+    hsl(var(--accent) / 0.1)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.btn-luxury:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-luxury:hover {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--primary));
+}
+
+/* Underline animation */
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  color: hsl(var(--muted-foreground));
+  transition: color 0.3s ease;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  height: 1px;
+  width: 100%;
+  background: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.underline-animation:hover {
+  color: hsl(var(--primary));
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* Image zoom */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.12);
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+/* Slide up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Letter spacing */
+@keyframes letterSpace {
+  from {
+    letter-spacing: 0.5em;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 0.2em;
+    opacity: 1;
+  }
+}
+
+.animate-letter-space {
+  animation: letterSpace 1.2s ease-out forwards;
+}
+
+/* Text reveal */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-text-reveal {
+  animation: textReveal 1s ease-out forwards;
+}
+
+/* Cinematic entry fade */
+@keyframes cinematicFade {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-cinematic-fade {
+  animation: cinematicFade 1.5s ease-out forwards;
+}
+
+/* Hover cinematic zoom + fade */
+.cinematic-hover img {
+  transition:
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
+}
+
+.cinematic-hover:hover img {
+  transform: scale(1.12);
+  opacity: 0.85;
+}
+
+
+.animate-cinematic-fade {
+  animation: cinematicFade 1.5s ease-out forwards;
+}
+
+/* ===========================
+   Icon Fade Animation
+=========================== */
+.icon-fade {
+  color: hsl(var(--primary) / 0.4);
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.group:hover .icon-fade {
+  color: hsl(var(--primary));
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   Text Fade Animation
+=========================== */
+.text-fade {
+  color: hsl(var(--foreground) / 0.55);
+  transition: color 0.3s ease;
+}
+
+.group:hover .text-fade {
+  color: hsl(var(--foreground));
+}
+
+
+/* ===========================
+   Timeline Hover Animation
+=========================== */
+
+/* default dull pink */
+.timeline-line {
+  background: hsl(var(--primary) / 0.35);
+  transition: background 0.3s ease;
+}
+
+.timeline-dot {
+  background: hsl(var(--primary) / 0.35);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* hover state */
+.group:hover .timeline-line,
+.group:hover .timeline-dot {
+  background: hsl(var(--primary));
+}
+
+.group:hover .timeline-dot {
+  transform: scale(1.15);
+}
+
+/* ===========================
+   Footer hover animation
+=========================== */
+
+.footer-fade {
+  color: hsl(var(--foreground) / 0.55);
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-group:hover .footer-fade {
+  color: hsl(var(--primary));
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Focus only for form fields */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: hsl(var(--primary)) !important;
+  box-shadow: none !important;
+}
+
+/* Reset button focus */
+button:focus,
+.btn-luxury:focus {
+  outline: none;
+  border-color: hsl(var(--primary) / 0.4) !important;
+  box-shadow: none !important;
+}
+
